@@ -82,6 +82,6 @@ if uploaded_file:
     if st.button(" View Past Insights"):
         st.subheader(" Insight History")
         for row in load_all_insights():
-            st.markdown(f"**File:** {row[1]} | ⏱️ {row[4]}")
+            st.markdown(f"**File:** {row[1]} |  {row[4]}")
             st.markdown(f"**Insights:**\n{row[3]}")
             st.markdown("---")
