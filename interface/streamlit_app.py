@@ -34,7 +34,7 @@ if uploaded_file:
     st.text(summary)
 
     # Charts
-    st.subheader("📊 Visualizations")
+    st.subheader(" Visualizations")
     st.plotly_chart(plot_revenue_trend(df))
 
     if df["product_id"].nunique() > 1:
@@ -47,7 +47,7 @@ if uploaded_file:
 
     insight_mode = st.radio("Select Insight Mode", ["Single Prompt", "MCP Chain"])
 
-    if st.button("🔮 Generate Insights"):
+    if st.button(" Generate Insights"):
         if insight_mode == "Single Prompt":
             prompt = generate_prompt(summary)
             insights = get_insights_from_llm(prompt)
@@ -63,7 +63,7 @@ if uploaded_file:
         save_insight_to_db(uploaded_file.name, summary, insights)
 
     # Ask Me Anything
-    st.subheader("🧠 Ask Me Anything About Your Data")
+    st.subheader(" Ask Me Anything About Your Data")
     user_question = st.text_input("Your question:", placeholder="Why did revenue drop in April?")
     if user_question:
         q_prompt = f"""
@@ -79,8 +79,8 @@ if uploaded_file:
         st.markdown(answer)
 
     # Show history
-    if st.button("📜 View Past Insights"):
-        st.subheader("📚 Insight History")
+    if st.button(" View Past Insights"):
+        st.subheader(" Insight History")
         for row in load_all_insights():
             st.markdown(f"**File:** {row[1]} | ⏱️ {row[4]}")
             st.markdown(f"**Insights:**\n{row[3]}")

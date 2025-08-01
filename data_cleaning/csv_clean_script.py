@@ -28,4 +28,4 @@ usage_df["churn_rate"] = np.round(np.random.uniform(0.01, 0.30, size=len(usage_d
 
 # Save the result
 usage_df.to_csv("sample_data/product_usage.csv", index=False)
-print("✅ product_usage.csv created successfully!")
+print(" product_usage.csv created successfully!")
